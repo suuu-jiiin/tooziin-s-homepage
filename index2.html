@@ -15,20 +15,19 @@
     body {
       margin: 0;
       font-family: 'Pretendard', sans-serif;
-      background: linear-gradient(-45deg, #fceabb, #f8b500, #ffcc70, #fceabb);
-      background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
-      color: #333;
+      background: #000;
+      color: #fff;
     }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .gradient-text {
+      background: linear-gradient(90deg, #f8b500, #ff6f91, #6a5acd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     header {
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.9);
       color: white;
       padding: 20px 40px;
       display: flex;
@@ -49,7 +48,7 @@
     }
 
     nav a:hover {
-      color: #ffe07f;
+      color: #ffcc70;
     }
 
     section {
@@ -65,14 +64,12 @@
 
     .hero h1 {
       font-size: 3.5em;
-      color: #222;
       margin-bottom: 0.5em;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
 
     .hero p {
       font-size: 1.3em;
-      color: #555;
+      color: #ccc;
     }
 
     .portfolio {
@@ -83,28 +80,33 @@
     }
 
     .project {
-      background: white;
+      background: #111;
+      color: white;
       padding: 20px;
       border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 16px rgba(255,255,255,0.1);
       transition: all 0.3s ease;
     }
 
     .project:hover {
       transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 20px rgba(255,255,255,0.2);
     }
 
     footer {
-      background: rgba(0,0,0,0.8);
-      color: #ccc;
+      background: rgba(255,255,255,0.05);
+      color: #999;
       text-align: center;
       padding: 40px 20px;
       margin-top: 100px;
     }
 
     a {
-      color: #0e66b0;
+      color: #00adb5;
+    }
+
+    h2 {
+      font-size: 2em;
     }
 
     @keyframes fadeIn {
@@ -132,21 +134,39 @@
 <body>
 
   <header>
-    <div><strong>수진's Portfolio</strong></div>
+    <div class="gradient-text"><strong>수진's Portfolio</strong></div>
     <nav>
-      <a href="#about">소개</a>
-      <a href="#projects">프로젝트</a>
-      <a href="#contact">연락처</a>
+      <a href="#about" class="gradient-text">소개</a>
+      <a href="#projects" class="gradient-text">프로젝트</a>
+      <a href="#contact" class="gradient-text">연락처</a>
     </nav>
   </header>
 
   <section class="hero" id="about">
-    <h1>안녕하세요! 👋</h1>
+    <h1 class="gradient-text">안녕하세요! 👋</h1>
+    <p>데이터사이언스와 웹을 사랑하는 수진입니다.</p>
   </section>
 
+  <section id="projects">
+    <h2 class="gradient-text">💼 프로젝트</h2>
+    <div class="portfolio">
+      <div class="project">
+        <h3>🎵 감정 기반 음악 추천</h3>
+        <p>GPT + Django로 감정을 분석해 맞춤 음악 추천</p>
+      </div>
+      <div class="project">
+        <h3>📈 대출 수익성 분석</h3>
+        <p>LendingClub 데이터를 활용해 Sharpe Ratio 최적화</p>
+      </div>
+      <div class="project">
+        <h3>📰 뉴스 프레이밍 분석</h3>
+        <p>RAG 기반 LLM으로 뉴스 보도 시각화 및 비교</p>
+      </div>
+    </div>
+  </section>
 
   <section id="contact">
-    <h2>📬 연락처</h2>
+    <h2 class="gradient-text">📬 연락처</h2>
     <p>Email: <a href="mailto:tooziin17@gmail.com">tooziin17@gmail.com</a></p>
     <p>GitHub: <a href="https://github.com/suuu-jiiin" target="_blank">github.com/suuu-jiiin</a></p>
   </section>
