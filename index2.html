@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>수진's 포트폴리오</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Pretendard', sans-serif;
-      background: #f5f5f5;
+      background: linear-gradient(-45deg, #fceabb, #f8b500, #ffcc70, #fceabb);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
       color: #333;
     }
 
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     header {
-      background: #222;
+      background: rgba(0,0,0,0.7);
       color: white;
       padding: 20px 40px;
       display: flex;
@@ -22,37 +37,42 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      backdrop-filter: blur(6px);
     }
 
     nav a {
       color: white;
       text-decoration: none;
       margin-left: 20px;
-      font-weight: 500;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #00adb5;
+      color: #ffe07f;
     }
 
     section {
-      padding: 80px 20px;
+      padding: 100px 20px;
       max-width: 960px;
       margin: auto;
     }
 
     .hero {
       text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     .hero h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
+      font-size: 3.5em;
+      color: #222;
+      margin-bottom: 0.5em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
 
     .hero p {
-      font-size: 1.2em;
-      color: #666;
+      font-size: 1.3em;
+      color: #555;
     }
 
     .portfolio {
@@ -66,20 +86,30 @@
       background: white;
       padding: 20px;
       border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
     }
 
     .project:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
 
     footer {
-      background: #222;
-      color: #aaa;
+      background: rgba(0,0,0,0.8);
+      color: #ccc;
       text-align: center;
       padding: 40px 20px;
-      margin-top: 80px;
+      margin-top: 100px;
+    }
+
+    a {
+      color: #0e66b0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
@@ -91,6 +121,10 @@
       nav a {
         margin: 10px;
         display: inline-block;
+      }
+
+      .hero h1 {
+        font-size: 2.5em;
       }
     }
   </style>
@@ -114,7 +148,7 @@
   <section id="contact">
     <h2>📬 연락처</h2>
     <p>Email: <a href="mailto:tooziin17@gmail.com">tooziin17@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/suuu-jiiin" target="_blank">github.com/suuu-jiiin/a></p>
+    <p>GitHub: <a href="https://github.com/suuu-jiiin" target="_blank">github.com/suuu-jiiin</a></p>
   </section>
 
   <footer>
